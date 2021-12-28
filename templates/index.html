@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table>
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Day
+        </th>
+        <th>
+            Min
+        </th>
+        <th>
+            Max
+        </th>
+    </tr>
+    {% for x,y in data.items %}
+        <tr>
+            <td>
+                {{ x }}
+            </td>
+            <td>
+                {{ y.day_name }}
+            </td>
+            <td>
+                {{ y.min_temp }}
+            </td>
+            <td>
+                {{ y.max_temp }}
+            </td>
+        </tr>
+    {% endfor%}
+    </table>
+{% endblock %}

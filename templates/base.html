@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <nav>
+        <a href="{% url 'subscribe_view' %}">Subscribe</a>
+        <a href="{% url 'home_view' 7 %}">List all</a>
+        <a href="{% url 'home_view' 1 %}">1 day forecast</a>
+        <a href="{% url 'home_view' 3 %}">3 day forecast</a>
+        <a href="{% url 'home_view' 7 %}">7 day forecast</a>
+    </nav>
+</head>
+<body>
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
