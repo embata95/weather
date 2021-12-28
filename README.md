@@ -14,7 +14,7 @@ This is a weather app and it has few functionalities:
 In order to set the project you should install the requirements.txt file as usual.
 <ul>
   <li>
-    For the API part I am using this one <a href="https://stormglass.io/" target="_blank">stormglass.io</a>, where you can register an get an API key for up to 10 free requests per day.
+    For the API part I am using this one https://stormglass.io/, where you can register an get an API key for up to 10 free requests per day.
   </li>
   <li>
     For the email part I am using gmail as provider. Refer to gmail documentation on how to enable less secure apps access.
