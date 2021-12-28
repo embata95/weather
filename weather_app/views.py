@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from rest_framework.decorators import api_view
 from weather_app.core import filter_weather_data
-from weather_app.models import Subscription, WeatherForecast
+from weather_app.models import Subscription
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 
