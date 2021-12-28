@@ -9,7 +9,7 @@ app = Celery('weather')
 app.conf.beat_schedule = {
     'send mails': {
         'task': 'weather.tasks.send_emails',
-        'schedule': crontab(hour=5, minute=0),
+        'schedule': crontab(hour=5, minute=0, day_of_week='1-5'),
     },
     'get weather data': {
         'task': 'weather.tasks.update_weather_data',
