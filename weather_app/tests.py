@@ -1,4 +1,3 @@
-import requests
 from django.test import TestCase, Client
 from weather.tasks import update_weather_data
 from weather_app.core import get_email_list, get_email_message, filter_weather_data, get_weather_object, \
@@ -56,22 +55,22 @@ class RESTAPITest(TestCase):
 
     def test_get_weather_forecast(self):
         update_weather_data()
-        response = self.client.get('http://127.0.0.1:8080/weather-info/?format=json')
+        response = self.client.get('/weather-info/?format=json')
         self.assertEqual(response.data, filter_weather_data(pk=7))
 
-        response = self.client.get('http://127.0.0.1:8080/weather-info/?days=1&format=json')
+        response = self.client.get('/weather-info/?days=1&format=json')
         self.assertEqual(response.data, filter_weather_data(pk=1))
 
-        response = self.client.get('http://127.0.0.1:8080/weather-info/?days=7&format=json')
+        response = self.client.get('/weather-info/?days=7&format=json')
         self.assertEqual(response.data, filter_weather_data(pk=7))
 
-        response = self.client.get('http://127.0.0.1:8080/weather-info/?days=99&format=json')
+        response = self.client.get('/weather-info/?days=99&format=json')
         self.assertEqual(response.data, filter_weather_data(pk=7))
 
     def test_email_subscribe(self):
-        response = self.client.post('http://127.0.0.1:8080/subscribe-API/', data={'email': 'test@gmail.com'})
+        response = self.client.post('/subscribe-API/', data={'email': 'test@gmail.com'})
         self.assertEqual(response.status_code, 201)
         self.assertEqual(get_email_list(), ['test@gmail.com'])
 
-        response = self.client.post('http://127.0.0.1:8080/subscribe-API/', data={'email': 'test@gmail.com'})
+        response = self.client.post('/subscribe-API/', data={'email': 'test@gmail.com'})
         self.assertEqual(response.status_code, 400)

@@ -1,3 +1,4 @@
+decouple
 amqp==5.0.9
 APScheduler==3.8.1
 asgiref==3.4.1

@@ -1,7 +1,5 @@
 import datetime
-
 import requests
-from weather import settings
 from weather_app.models import Subscription, WeatherForecast
 from datetime import timedelta
 
