@@ -20,9 +20,9 @@ In order to set the project you should install the requirements.txt file as usua
     For the email part I am using gmail as provider. Refer to gmail documentation on how to enable less secure apps access.
   </li>
   <li>
-    For the scheduled task I am using Celery beat with rabbitMQ. Celery can be used with other services as well, which is described in the documentation.
-    I will share the commands that I use to schedule and execute the tasks from Celery, as its documentation is a bit messy.
-    Start a worker that would receive and execute tasks: "celery -A weather worker --loglevel=info --concurrency 1 -P solo"
+    For the scheduled task I am using Celery beat with rabbitMQ. Celery can be used with other services as well, which is described in the documentation.<br/>
+    I will share the commands that I use to schedule and execute the tasks from Celery, as its documentation is a bit messy.<br/>
+    Start a worker that would receive and execute tasks: "celery -A weather worker --loglevel=info --concurrency 1 -P solo"<br/>
     Start the Celery beat process: "celery -A weather beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler"
   </li>
 </ul>
