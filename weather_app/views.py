@@ -7,7 +7,6 @@ from weather_app.models import Subscription
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 
-
 class Subscribe(CreateView):
     model = Subscription
     fields = '__all__'
@@ -15,9 +14,9 @@ class Subscribe(CreateView):
     success_url = reverse_lazy('home_view')
 
 
-def home_view(request, pk=7):
+def home_view(request, days_requested=7):
     context = {
-        'data': filter_weather_data(pk=pk),
+        'data': filter_weather_data(days_requested=days_requested),
     }
     return render(request, 'index.html', context=context)
 
@@ -27,7 +26,7 @@ def weather_API(request):
     days = 7
     if 'days' in request.query_params:
         days = int(request.query_params['days'])
-    return Response(data=filter_weather_data(pk=days))
+    return Response(data=filter_weather_data(days_requested=days))
 
 
 class SubscribeAPISerializer(serializers.ModelSerializer):

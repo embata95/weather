@@ -17,6 +17,7 @@ INSTALLED_APPS = [
 
     'weather_app',
     "django_celery_beat",
+    "corsheaders",
     "rest_framework",
 ]
 REST_FRAMEWORK = {
@@ -32,6 +33,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000',
+    "http://192.168.100.20:3000",
 ]
 ROOT_URLCONF = 'weather.urls'
 TEMPLATES = [

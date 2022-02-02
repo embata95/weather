@@ -7,7 +7,7 @@ router.register(r'', SubscribeAPI, basename='subscribe API')
 
 urlpatterns = [
     path('', home_view, name='home_view'),
-    path('<int:pk>', home_view, name='home_view'),
+    path('<int:days_requested>', home_view, name='home_view'),
     path('subscribe/', Subscribe.as_view(), name='subscribe_view'),
     path('weather-info/', weather_API, name='web API'),
     path('subscribe-API/', include(router.urls))

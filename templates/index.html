@@ -16,19 +16,19 @@
             Max
         </th>
     </tr>
-    {% for x,y in data.items %}
+    {% for curr_day in data %}
         <tr>
             <td>
-                {{ x }}
+                {{ curr_day.date }}
             </td>
             <td>
-                {{ y.day_name }}
+                {{ curr_day.day_name }}
             </td>
             <td>
-                {{ y.min_temp }}
+                {{ curr_day.min_temp }}
             </td>
             <td>
-                {{ y.max_temp }}
+                {{ curr_day.max_temp }}
             </td>
         </tr>
     {% endfor%}

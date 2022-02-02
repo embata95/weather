@@ -1,0 +1,20 @@
+:root {
+  --table-border: 1px solid white;
+  --table-padding: 3%
+}
+body{ 
+  background-color: #2d2d39 !important;
+  color: #e1f6fb !important;
+}
+.weather_data_table tbody > tr > td {
+  border: var(--table-border);
+  padding: var(--table-padding);
+}
+.weather_data_table thead > tr > th {
+  border: var(--table-border);
+  padding: var(--table-padding);
+}
+
+.weather_data_table {
+  min-width: 300px;
+}
